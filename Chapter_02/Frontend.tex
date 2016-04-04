@@ -1,0 +1,66 @@
+\section{Frontend}
+\subsection{HTML}
+A HTML a felhasználói felület megjelenítéséhez használt egyik eszközöm. A HTML egy mozaikszó, amely jelentése a hiperszöveges jelölő nyelv. Ez egy leíró nyelv, mely segítségével weboldalak készítésére hozták létre. Mára már szabvány lett belőle. A HTML szöveges állományok, amelyek tartalmazzák, azokat a szimbólumokat a megjelenítőnek, amelyek leírják, hogy az adott dokumentumot hogyan kell megjeleníteni. A megjelenítő programok általában web böngészők. 
+
+1991-ben készítette az első verzióját Berners-Lee, de ezt még nem publikálták. Az első publikált változat a HTML 2.0 szabvány, amely 1995-ben jelent meg. A következő fő verzió a 4.0.1 volt, amelyet 1999 végén publikáltak. Ezt széleskörbem használják, még ma is, pedig 2012-ben megjelent a HTML 5 verzió. Ez egy kiterjesztése a 4.0.1-es verziónak, amely alkalmazkodik a modern korhoz. 
+
+Eredetileg egy struktúrát akartak definiálni(bekezdéseket, listákat), hogy a kutatók könnyen megosszák egymás között az eredményeket. Ma az egyik legelterjedtebb weblap formátum. 
+
+A HTML, ahogy már említettem, szimbólumokat tartalmaz, azaz pontosabban úgynevezett "tag"-ekből épül fel. Ezeket a "tag" neveket kisebb nagyobb jelek között adjuk meg. Egy HTML dokumentum a következőképp épül fel:
+\begin{minted}{html}
+<html>
+   <head>
+       Document header related tags
+   </head>
+
+   <body>
+       Document body related tags
+   </body>
+</html>
+\end{minted}
+A html "tag" magában foglalja az egész dokumentumot, amely két fő részből épül fel:
+\begin{enumerate}
+    \item head: a dokumentum fejrészét tartalmazza, amelyben megadjhatjuk a nevét a dokumentumnak, illetve különböző külső forrásokat(pl: JavaScript, CSS) kapcsolhatunk a dokumentumunkhoz.
+    \item body: a dokumentum fő része, ez a rész határozza meg a megjelenést. Általában különböző "tag"-eket tartalmaz, mint például: a, div, p.
+\end{enumerate}
+
+
+\subsection{CSS}
+A felhasználói felület stílusának definiálására használtam az alkalmazáfejlesztés során. A CSS egy stílusleíró nyelv, amely a HTML dokumentumok megjelenítését írják le a megjelenítőnek. Segítséget nyújt abban, hogy egy weboldalnak egyedi megjelenítése legyen, továbbá segít abban is hogy különböző eszközökön másképp jelenjenek meg. 
+
+A CSS működési elvét tekintve, szabályokat köt a HTML-es "tag"-ekhez. Ezek a szabályok tartlamazzák, hogy a bizonyos elemeket hogyan kell megjeleníteni. Egy CSS szabály a következőképpen épül fel: 
+\begin{minted}{css}
+h1 {
+   color: #36CFFF; 
+}
+\end{minted}
+Az első része a h1, egy szelektor, amely megadja hogy a következő szabályt mely HTML elem vagy elemekhez kell hozzátársítani. Ha több elemhez szeretnénk ugyanazt a szabályt rendelni, akkor vesszővel elválasztott listával megtehetjük. 
+
+A másik része a deklaráció, amely megadja, hogy milyen stílusa legyen a hivatkozott elemnek. \\
+A deklaráció tovább osztható két részre, a kettőspont mentén:
+\begin{enumerate}
+    \item Tulajdonság: a hivatkozott elem tulajdonságát választja ki. Jelen esetben a színt.
+    \item Érték: A megadott tulajdonsághoz tartozó érték.
+\end{enumerate}
+A CSS egy nagy lépés az újrafelhasználható honlapok, stílusok létrehozása érdekében.
+
+\subsection{JavaScript}
+A JavaScript egy magas szintű, dinamikus és típusnélküli interpretált nyelv, 
+amelyet arra használunk, hogy interaktívvá tegyük a honlapokat. Kliens oldali nyelv, amely azt jelenti, hogy a honlapot böngésző személy számítógépén fut. Manapság szinte minden böngésző támogatja, semmiféle kiegésztítő telepítése nélkül. Segítségével könnyedén változtathatunk dinamikusan a honlap kinézetén, vagy akár a tartalmán is. 
+
+1995-ben a Netscape Communications Corporation dolgozója, bizonyos Brendan Eich fejlesztette ki. Elsőnek az ECMA ECMA-szkript néven szabványosította 1997-99-ig. Később a JavaScript nevet kapta, és szintaktikája közelebb került a Sun Microsystems Java programozási nyelvéhez. A kódot, akár a html kódba is írhatjuk <script></script> "tag"-ek közé, illetve egy külön .js kiterjesztésű fájlba.
+
+A fejlesztésben még egy eszköz segítet, amely szintén egy elterjedt eszköz a jQuery. Ez egy JavaScript nyelven íródott könyvtár, amely kis méretű, gyors és különböző technológiákban gazdag könyvtár. Segítségével könnyedén megvalósítható, a HTML-es "tag"-ek kiválasztása, vagy akár AJAX hívások is. \\
+A JavaScript és a jQuery egy elengedhetetlen része, a modern dinamikus weblapkészítésnek.
+
+
+\subsection{Bootstrap}
+A Bootstrap a világ legnépszerűbb HTML, CSS, és JavaScript keretrendszere, amely segítségével könnyedén készíthető responsív weboldalak. Igazából ez egy eszközgyűjtemény, amelyben megtalálható a modern web minden komponense. Formok, gombok, navigációs és egyéb interfészek gyűjteménye. Ennek segítségével egy modern kinézetű weboldal létrehozása szinte csak legózás. Másik előnye, hogy kis méretű, két fő fájlból áll: 
+\begin{enumerate}
+    \item bootstrap.min.css
+    \item bootstrap.min.js
+\end{enumerate}
+
+Az alkamazásom felhasználói felülete erősen támaszkodik a Bootstrapra.
+A Bootstrap eredeti nevén Twitter Blueprint. Mark Otto és Jacob Thornton fejlesztette ki a Twitternél, hogy egy egységes belső eszközt alakítsanak ki a weboldalak kinézetéhez. A Bootstrap előtt számos könyvtárat és egyéb interfészeket használtak, ami azt okozta, hogy a weblapok inkonzisztensek és nehezen karbantarthatóak lettek. Egy idő után elkezdett dolgozni egy kisebb csapat is a két fejlesztő mellett ezen a projektem. Aztán 2011-ben úgy döntöttek, hogy megjelentetik egy nyíltforrású projektként, így hatalmas fejlesztői és karbantartói közösséget kapott a Bootstrap projekt. Azóta is folyamatosan fejlődő keretrendszerről van szó, hisz 2015-ben már a Bootstrap 4 alpha verziója jelent meg.
+

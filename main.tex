@@ -1,0 +1,102 @@
+\documentclass[a4paper, 12pt, oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{lmargin=3cm, rmargin=2cm, tmargin=3cm, bmargin=3cm}
+\usepackage[magyar]{babel}
+\usepackage{import}
+\usepackage{t1enc}
+\usepackage{minted}
+\usepackage{times}
+\usepackage{indentfirst}
+
+\linespread{1.25}
+\setlength{\parskip}{1em}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{SZAKDOLGOZAT}
+\author{Istvan Orban}
+\date{March 2016}
+
+\begin{document}
+
+
+\begin{titlepage}
+	\centering
+	\vspace*{4cm}
+	{\scshape\LARGE SZAKDOLGOZAT\par}
+	\vfill
+	{\bfseries \raggedleft Orbán István Sándor\par}
+	\vfill
+
+% Bottom of the page
+	{\LARGE Debrecen \\ 2016 \par}
+	
+    \newpage
+    \pagestyle{empty}
+	\centering
+	{\scshape \large Debreceni Egyetem \\ Informatikai Kar\par}
+	\vfill
+	{\LARGE Webes alkalmazás fejlesztése Scala nyelven\par}
+	\vfill
+	
+    {\textbf{Témavezető:}
+    \hfill \hfill \textbf{Készítette:} \\
+    Dr. Szathmáry László
+    \hfill \hfill 
+    Orbán István Sándor \\
+    egyetemi docens
+    \hfill \hfill Programtervező Informatikus\par}
+    
+    \vspace{2.5cm}
+	{\large Debrecen \\ 2016 \par}
+\end{titlepage}
+
+
+\tableofcontents
+
+
+\chapter{Bevezetés}
+\import{Chapter_01/}{Motivation.tex}
+\import{Chapter_01/}{Purpose.tex}
+
+\chapter{Felhasznált eszközök és technológiák}
+\import{Chapter_02/}{Backend.tex}
+\import{Chapter_02/}{Frontend.tex}
+\import{Chapter_02/}{Database.tex}
+
+\chapter{Az alkalmazás részletes ismertetése}
+\import{Chapter_03/}{Intro.tex}
+\import{Chapter_03/}{GUI.tex}
+\import{Chapter_03/}{Construct.tex}
+
+\chapter{Összefoglalás}
+\import{Chapter_04/}{Summary.tex}
+
+
+\chapter*{Köszönetnyílvánítás}
+\addcontentsline{toc}{chapter}{Köszönetnyílvánítás}
+\title{Köszönetnyílvánítás}
+...
+
+\newpage
+\addcontentsline{toc}{chapter}{Irodalomjegyzék}
+\begin{thebibliography}{11}
+\bibitem{Scala}
+http://www.scala-lang.org/what-is-scala.html
+\bibitem{Play}
+https://www.playframework.com/documentation/2.4.x/Home
+\bibitem{JavaScript}
+http://javascript.about.com/od/reference/p/javascript.htm
+\bibitem{JavaScript2}
+Jon Duckett: Beginning HTML, XHTML, CSS, and Java
+\bibitem{MongoDB 1}
+http://searchdatamanagement.techtarget.com/definition/MongoDB
+\bibitem{MongoDB 2}
+Dr. Szathmáry László: A MongoDB adatbázis-kezelő rendszer
+\bibitem{HTML}
+http://www.tutorialspoint.com/html/
+
+\end{thebibliography}
+\end{document}

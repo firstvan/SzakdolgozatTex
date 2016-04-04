@@ -1,0 +1,42 @@
+\section{A program felépítése}
+\subsection{Szerkezet}
+A program szerkezetét, ahogy már többször is említettem, a model-nézet-vezérlő szerkezet alapján építettem fel. Ebben nagy segítséget nyújt a "Play Framework", hiszen a projekt generálásakor kialakít számunkra egy ilyen szerkezeti felépítést. A modellben Scala-s eseti osztályok találhatóak, amelyek reprezentálják a megfelelő adategységeimet (vásárlók, felhsználók, termékek, stb.). A vezérlő egység alatt található minden olyan osztály és metódus, amely oldal response-t ad vissza. Ezen metódusok meghívása, bizonyos url-ek elérése alapján hívódnak meg. A conf/routes állományban található egy párosítás, amely megadja, hogy mely url-ekhez, mely metódus tartozik. A routes fájl egy sor az alábbi módon néz ki:
+\begin{minted}{scala}
+GET     /main   controllers.Main.index
+\end{minted}
+Az első szó, jelen esetben a GET, szó a http metódus módját adja meg. a következő szó (/main), az url-t azonosítja. Az utolsó rész (controllesr.Main.index), pedig a metódust azonosítja, amely meghívódik az url-re. Az index metódus a következőképp néz ki:
+\begin{minted}{scala}
+  def index = withAuth { username => implicit request =>
+    if(Main.user == null){
+      Main.user =  UserDAO.getUserByUserName(username).get
+    }
+
+    if(Main.user.accountType.equals("admin")){
+      Ok(views.html.mainAdmin(username))
+    } else {
+      val l = RegistrationDAO.getRegistrationByUser(Main.user._id, OrderState.Open)
+      if (l.isDefined) {
+        val li = Main.tableLook(l.get)
+        Ok(views.html.mainpage(username, li))
+      }
+      else
+        Ok(views.html.mainpage(username, List[TableLook]()))
+    }
+  }
+\end{minted}
+Látható, hogy a metódus egy Ok hívással tér vissza, amely kirendereli a megfelelő oldalt, azaz előállítja a megfelelő http választ. A routes állomány minden sorához egy ilyen függvénynek kell társulni.
+
+Itt található egy almappa, amely a db nevet kapta. Ez az adatbázis elérési funkciót megvalósító osztályokat tartalmazza, ezeket majd az Adatbázis elérése alfejezetben részletezem.\\
+A nézet alegységben, találhatóak az úgynevezett HTML vázak. Ezek szintaktikailag tartalmaznak HTML-es kódokat, illetve Scala-s kódot, amelyet egy @ jellel azonosítunk. Azaz ha egy for ciklust szeretnénk benne definiálni, a következőképpen néz ki:
+\begin{minted}{scala}
+@for(i <- li){}
+\end{minted}
+Ez a for ciklus végig megy az li lista minden elemén. Ez nagyon hasznos eszköz, hisz így könnyedén hozhatunk létre dinamikus honlapokat. Például a termékek kilistázásánál, megkapja az vázoldal a termékeket tartalmazó listát, és így listázzuk ki.
+
+Az oldal kialakítása során feltételeket is vizsgálhatunk, hasonló módon mint a for ciklus. Sőt változókat is definiálhatunk, viszont erről bővebben a Lapozás megvalósítása nevű menüpontban ejtek szót.
+\subsection{Adatbázis felépítése}
+\subsection{Adatbázis elérése}
+\subsection{Rendelés rögzítése}
+\subsection{Vásárlók kezelése}
+\subsection{Felhasználók kezelése}
+\subsection{Lapozás megvalósítása}

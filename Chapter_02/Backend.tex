@@ -1,0 +1,33 @@
+\section{Backend}
+\subsection{Scala}
+A webalkalmazás fejlesztése scala nyelven valósult meg. A Scala egy mozaik szó, amely jelentése skálázható nyelv. Ez arra utal, hogy a nyelv alkalmas mind egysoros utasítások megírására, de emellett alkalmas arra is, hogy nagyméretű kritikus rendszereket hozzunk létre, mint ahogy már nagy cégek is megtették. Például: Twitter, LinkedIn, Intel.
+
+A Scala egy script nyelv érzetét adja, a tömör szintaxisa, illetve a változók tipusának opcionális megadása miatt, mivel a fordító ki tudja következtetni ezeket. Továbbá lehetőségünk van scala shellt használni, a gyors visszajelzésre. A fejlesztők annyira szeretik ezt a nyelvet, hogy a 2012-es JavaOne konferencián elnyerte a ScriptBowl díjjat.
+
+Ugyanakkor a Scala preferált nyelv sokféle kritikus kiszolgáló rendszerek esetén. A generált kód megegyezik a Java által generáltéval, továbbá pontos gépelést igényel, így sok hiba már fordítás időben előjön.
+
+A nyelv skálázhatósága az eredménye a gondosan integrált funkcionális és objektum-orientált koncepciónak.\\
+Objektum-orientált szempontból, a Scala egy tisztán objektum-orientált nyelv. Ezalatt azt értem, hogy minden érték egy objektum, és minden művelet egy metódus hívás. A nyelv támogatja fejlett program architektúrákat osztályokon és interfészeken vagyis úgynevezett "traits"-okon keresztül. Sok hagyományos tervezési mintát alapértelmezésben támogat. Például a singelton modellt az "object"-eken keresztül, illetve a "visitor"-ok által támogatott mintaillesztést. Az implicit osztályok, pedig lehetővé teszik, hogy új metódusokat adjunk már meglévő osztályokhoz, attól függetlenül, hogy az Java vagy Scala osztály.
+
+Funkcionális megközelítésből, viszont, annak ellenére, hogy a szintaxis meglehetősen konvencionális, a Scala is egy teljesértékű funkcionális nyelv. Minden megvan benne, ami elvárható egy funckionális nyelvtől.
+
+Ellentétben sok hagyományos funkcionális nyelvel, a Scala lehetővé teszi a könnyed váltást a magasabb szint felé. Úgy is szokták jellemezni ezt a nyelvet, mint pontosvessző nélkül Java. Azzal a különbséggel, hogy bármely stílusban programozhatunk benne, mind komponens alapon, funkcionálisan, illetve valamely tervezési mintát alkalmazva.
+
+A stílus szabadság mellett a nyelv további előnye (és egyben hátránya), hogy JVM (Java Virtuális Gép)-en fut, és a Javas osztályok használhatóak a Scalas projektekben is, függetlenül attól, hogy azonos vagy külön projektbe tartoznak. Sőt a Java fordító része a Scala fordítónak. Ez azért jó, hogy használhatjuk a Javas osztályokat, mivel így használhatunk Java-s könyvtárakat, keretrendszereket és egyéb Java-s dolgot, mint például a Maven-t. Továbbá a legtöbb integrált fejlesztői környezet, amely támogatja a Java-t az a Scala-t is támogatja. Sőt még Androidon is futtatható. Mindemiatt a Scala fejlesztői közössége aktív résza a Java-s ökoszisztémának, mindannyira, hogy a népszerű Scala-s keretrendszerekhez (Akka, Play, stb...) kettős dokumentációt készítenek, Scalahoz és Javahoz.
+
+A Scala további erőssége abban rejlik, hogy könnyedén készíthető biztonságos és eredményes többszálas alkalmazás.
+Ezen nyelv megalkotói úgy gondolták, hogy Scala-ban programozni legfőképp élvezetesnek kell lennie, viszont emellett pedig egy erős biztonságos rendszernek. A Scala lehetővé teszi, hogy kevesebb kóddal ugyanolyan, vagy jobb kódot írjunk.
+
+\subsection{Play 2.4 keretrendszer}
+A Play keretrendszer egy magas produktivitást elősegítő eszköz, amely elérhető, mind Java és Scala nyelvhez is. Megtalálható minden benne, amely a modern webes alkalmazások fejlesztéséhez kell, gondolok itt integrált komponensekre, illetve API-kra. A Play keretrendszer története 2007-re nyúlik vissza, viszont az általam használt verziót(2.4) 2015-ben jelent meg. Viszont a legújabb verzió 2016 márciusában, azaz nemrégiben jelent meg. Az újabb verziók célja, hogy könnyed, web-barát arhitektúrák legyenek, mindenféle támogatást nyújtva, ugyanakkor mégis stabilak és kevés erő forrást használjanak.
+
+A Play egy nyílt forráskódú, Java-ban írodott keretrendszer. Az egyik fő előnye, hogy a Modell-nézet-vezérlés arhitektúra alapértelmezett része. Továbbá könnyű Play alkalmazást létrehozni, hisz biztosít számunkra egy skriptet, amely legenerálja nekünk az alapértelmezett projektet. A legenerált projekt felépítése megegyezik az MVC-vel. Továbbá rendezett struktúrát biztosít számunkra a különböző tesztek, stílus, és script fájloknak is. További előny, hogy a Play keretrendszerben van egy beépített Akka szerver, amely lehetővé teszi számunkra, hogy különböző szerverek telepítése nélkül láthassuk a munkánk eredményét. Ez a szerver biztosítja számunkra, hogy a változtatásokat anélkül lássuk, hogy újra kellene indítani a szervert, továbbá pontos hibaüzeneteket közöl, amennyiben jelentkezik valamilyen hiba. Tehát elmondhatjuk, hogy elég rugalmas eszköz, amely nagyban segíti a fejlesztők munkáját. 
+
+Könnyedén bővíthető programkönyvtárakkal, erről az SBT gondoskodik. Ez a Scala nyelvhez íródott interaktív projektkezelő eszköz. Bármilyen programkönyvtárat egy sorral hozzáadható. Például a Cashbah programkönyvtárat a MongoDB eléréséhez is így importáltam be: 
+\begin{minted}{scala}
+libraryDependencies += "org.mongodb" %% "casbah" % "2.8.2"
+\end{minted}
+Az sbt-t támogatja a maven is, így egyszerűen lehet könyvtárfüggőségeket beimportálni.\\
+Mindemiatt el is terjedt, számos weboldal Play keretrendszer segítségével íródott, mint például a LinkedIn is ezen eszköz segítségével íródott. 
+
+\newpage

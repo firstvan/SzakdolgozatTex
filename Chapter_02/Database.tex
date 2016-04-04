@@ -1,0 +1,16 @@
+\section{Adatbázis}
+\subsection{MongoDB}
+A MongoDB egy nem-relációs adatbázis, melynek adatmodellje dokumentum-orientált. Egyike az úgynevezett NoSQL típusú adatbázisoknak. Ennek lényege, hogy az adatokat nem táblákban és rekordokba helyezi el, hanem használja a JSON-os struktúrát. Ez a struktúra dokumentumokból épül fel, amelybe kulcs-érték párok vannak. A másik alapegysége a dokumentumok egy kollekciója.\\
+A MongoDB első változata 2009-ben, tehát aránylag új.
+
+Főbb jellemzői a hagyományos adatbázis struktúrákkal szemben:
+\begin{itemize}
+  \item nem támogatja a join műveleteket
+  \item nincsennek tranzakciók
+  \item a sémák rugalmasak, így bármikor bővíthető új tipusokkal egy kollekció
+\end{itemize}
+
+A dokumentumtárolás és adatcsere formája a BSON, amely egy bináris JSON formátum.
+
+\subsection{Casbah}
+A Casbah egy eszköztár a Scala nyelvhez MongoDB adatbázis eléréséhez és kezeléséhez. Ez teremt kapcsolatot az adatbázis és a program között. Célja, hogy a  Scala nyelvi konvencióknak megfelelve könnyű kezelést biztosítson MongoDB adatbázisok kezelésére. Úgy épült fel, hogy kihasználja a Scala nyelv előnyeit, illetve támogassa a tipuskonverziókat az adatbázis és a programnyelv típusai között. Szinte minden natív parancshoz kínál egy neki megfelelő függvényt, amellyel könnyen elvégézhető a kívánt feladat.
